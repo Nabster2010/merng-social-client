@@ -5,14 +5,13 @@ import reportWebVitals from './reportWebVitals';
 //apollo imports
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { createUploadLink } from 'apollo-upload-client';
-import { split, HttpLink } from '@apollo/client';
+import { split } from '@apollo/client';
 import { getMainDefinition } from '@apollo/client/utilities';
 import { setContext } from '@apollo/client/link/context';
 import { WebSocketLink } from '@apollo/client/link/ws';
 
 const wsLink = new WebSocketLink({
-	//uri: `ws://localhost:5000/graphql`,
-	uri: `//merng-social.herokuapp.com/`,
+	uri: `wss://merng-social.herokuapp.com/graphql`,
 	options: {
 		reconnect: true,
 	},
