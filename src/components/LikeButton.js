@@ -25,19 +25,19 @@ const LikeButton = ({ postId, likes, user }) => {
 			floated='left'
 			loading={loading}
 		>
-			<Button color='teal' basic={!isLiked}>
+			<Button color='blue' basic={!isLiked}>
 				<Icon name='heart' />
 			</Button>
-			<Label basic color='teal' pointing='left'>
+			<Label basic color='blue' pointing='left'>
 				{likes.length || 0}
 			</Label>
 		</Button>
 	) : (
 		<Button as='div' labelPosition='right' floated='left' as={Link} to='/login'>
-			<Button color='teal' basic>
+			<Button color='blue' basic>
 				<Icon name='heart' />
 			</Button>
-			<Label basic color='teal' pointing='left'>
+			<Label basic color='blue' pointing='left'>
 				{likes.length || 0}
 			</Label>
 		</Button>

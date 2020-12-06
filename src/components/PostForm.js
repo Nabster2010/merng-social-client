@@ -1,6 +1,6 @@
 import { gql, useMutation } from '@apollo/client';
 import React, { useState } from 'react';
-import { Button, Form, Grid } from 'semantic-ui-react';
+import { Button, Form, Grid, TextArea } from 'semantic-ui-react';
 import { POSTS } from '../graphql/queries';
 import { ADD_POST } from '../graphql/mutations';
 
@@ -43,7 +43,7 @@ const PostForm = () => {
 						error={errors?.body}
 					/>
 				</Form.Field>
-				<Button type='submit' color='teal'>
+				<Button type='submit' color='blue'>
 					Post
 				</Button>
 				{errors && (

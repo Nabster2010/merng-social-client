@@ -43,29 +43,24 @@ const Home = () => {
 	if (!data) return <h1>No posts</h1>;
 	// TODO: if errors map throw it
 	return (
-		<Grid columns={3}>
-			<Grid.Row>
-				<h1> Recent Posts </h1>
-			</Grid.Row>
-			<Grid.Row>
-				{user && (
-					<Grid.Column>
-						<PostForm />
-					</Grid.Column>
-				)}
-				{loading ? (
-					<h1>loading...</h1>
-				) : (
-					<Transition.Group duration={1000}>
-						{data.getPosts &&
-							data.getPosts.map((post) => (
-								<Grid.Column key={post.id}>
-									<PostCard post={post} user={user} />
-								</Grid.Column>
-							))}
-					</Transition.Group>
-				)}
-			</Grid.Row>
+		<Grid stackable columns={2}>
+			{user && (
+				<Grid.Column width='16'>
+					<PostForm />
+				</Grid.Column>
+			)}
+			{loading ? (
+				<h1>loading...</h1>
+			) : (
+				<Transition.Group duration={1000}>
+					{data.getPosts &&
+						data.getPosts.map((post) => (
+							<Grid.Column key={post.id}>
+								<PostCard post={post} user={user} />
+							</Grid.Column>
+						))}
+				</Transition.Group>
+			)}
 		</Grid>
 	);
 };
